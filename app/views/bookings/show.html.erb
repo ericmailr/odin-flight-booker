@@ -1,0 +1,21 @@
+<h1> Your Booking Info </h1>
+
+Flight No:
+<%= @flight.id %> 
+<br>
+<%= @flight.from_airport.code %>
+to
+<%= @flight.to_airport.code %>
+<br>
+Time:
+<%= @flight.formatted_departure_time %>
+<br><br>
+Passenger Info:<br>
+<% @booking.passengers.each do |passenger| %>
+    Name: 
+    <%= passenger.name %>
+    <br>Email:
+    <%= passenger.email %>
+    <br><br>
+<% end %>
+

@@ -1,24 +1,14 @@
 # README
+Author: Eric Miller
+Project: Odin Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+link: https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav
 
-Things you may want to cover:
+Description:
 
-* Ruby version
+A website build of the first three steps of a typical checkout process for booking a one-way flight.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-Enter desired dates / airports and click “Search”
+-Choose from among a list of eligible flights
+-Enter passenger information for all passengers
+-Enter billing information

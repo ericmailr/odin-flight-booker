@@ -1,0 +1,36 @@
+<h1> SEARCH FLIGHTS </h1>
+
+<%= form_for(:search, url: flights_path, method: :get) do |f| %> 
+    <%= f.label :from_airport_id, "Departure Airport" %>
+    <%= f.select(:from_airport_id, @airport_options, include_blank: true) %>
+    <br>
+    <%= f.label :to_airport_id, "Arrival Airport" %>
+    <%= f.select(:to_airport_id, @airport_options, include_blank: true) %>
+    <br>
+    <%= f.label :number_of_passengers, "Number of passengers" %>
+    <%= f.select(:number_of_passengers, options_for_select([*1..4])) %>
+    <br>
+    <%= f.label :departure_date, "Departure Date" %> 
+    <%= f.select(:departure_date, options_for_select(@date_options), include_blank: true) %>
+    <br>
+    <%= f.submit "Search Flights" %>
+
+<% end %>
+
+<h1> MATCHING FLIGHTS </h1>
+<%= form_tag(new_booking_path, method: :get) do %>
+    <% @flights.each do |flight| %>
+        <%= radio_button_tag(:flight_id, flight.id, checked = true) %>
+        <%= label_tag(:flight_id, "Flight No. #{flight.id}") %>
+       
+        <br>
+        <%= Airport.find(flight.from_airport_id).code %>
+        to
+        <%= Airport.find(flight.to_airport_id).code %>
+        <br>
+        <%= flight.formatted_departure_time %> 
+        <br><br>
+    <% end %>
+    <%= hidden_field_tag(:number_of_passengers, @number_of_passengers) %>
+    <%= submit_tag "Select Flight" if @flights.count != 0 %>
+<% end %>

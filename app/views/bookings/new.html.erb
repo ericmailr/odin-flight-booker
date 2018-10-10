@@ -1,0 +1,24 @@
+<h1>Booking Form</h1>
+
+    
+<%= form_for(@booking) do |f| %>
+    <%= f.hidden_field(:flight_id, value: @flight.id) %>
+    <%= hidden_field_tag(:number_of_passengers, @number_of_passengers) %>
+    <ul>
+        <li>Flight No: <%= @flight.id %></li>
+        <li><%= @flight.from_airport.code %>
+        to
+        <%= @flight.to_airport.code %></li>
+        <li>Date: <%= @flight.formatted_departure_time %></li>
+    </ul>
+    
+    <%= f.fields_for :passengers do |passenger_form| %>
+            <%= passenger_form.label(:name, "Name") %>
+            <%= passenger_form.text_field(:name) %>
+            <br>
+            <%= passenger_form.label(:email, "Email") %>
+            <%= passenger_form.email_field(:email) %>
+            <br><br>
+    <% end %>
+    <%= f.submit "Book Flight" %> 
+<% end %>
