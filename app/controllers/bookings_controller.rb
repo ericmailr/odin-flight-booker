@@ -15,6 +15,9 @@ class BookingsController < ApplicationController
             @booking.passengers.build(name: hash[:name], email: hash[:email])
         end
         if @booking.save
+            @booking.passengers.each do |passenger|
+                PassengerMailer.with(passenger: passenger).booking_confirmation_email.deliver_later
+            end
             redirect_to @booking
         else
             redirect_to flights_path
