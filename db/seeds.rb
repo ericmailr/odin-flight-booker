@@ -27,4 +27,17 @@ Flight.create!(from_airport_id: Airport.find_by(code: "SFO").id, to_airport_id: 
 Flight.create!(from_airport_id: Airport.find_by(code: "DAL").id, to_airport_id: Airport.find_by(code: "NYC").id, departure_time: DateTime.new(2019,3,4,16,3,0))
 
 
+#new flights
+
+Flight.create!(from_airport_id: Airport.find_by(code: "SFO").id, to_airport_id: Airport.find_by(code: "DAL").id, departure_time: DateTime.new(2019,5,3,4,20,0)) 
+
+Flight.create!(from_airport_id: Airport.find_by(code: "PDX").id, to_airport_id: Airport.find_by(code: "SFO").id, departure_time: DateTime.new(2019,3,4,13,3,0))
+
+Flight.create!(from_airport_id: Airport.find_by(code: "NYC").id, to_airport_id: Airport.find_by(code: "DAL").id, departure_time: DateTime.new(2019,1,5,15,30,0))
+
+Flight.create!(from_airport_id: Airport.find_by(code: "DAL").id, to_airport_id: Airport.find_by(code: "NYC").id, departure_time: DateTime.new(2019,1,5,15,30,0))
+
+Flight.create!(from_airport_id: Airport.find_by(code: "SFO").id, to_airport_id: Airport.find_by(code: "NYC").id, departure_time: DateTime.new(2019,4,21,12,13,0))
+
+Flight.create!(from_airport_id: Airport.find_by(code: "LAX").id, to_airport_id: Airport.find_by(code: "NYC").id, departure_time: DateTime.new(2019,4,4,16,3,0))
 
