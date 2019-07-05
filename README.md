@@ -2,9 +2,9 @@
 Author: Eric Miller
 Project: Odin Flight Booker
 
-link: https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav
+Check it out here: https://limitless-peak-88659.herokuapp.com/
 
-Description:
+Completed as part of the Odin Project: https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav
 
 A website build of the first three steps of a typical checkout process for booking a one-way flight.
 
