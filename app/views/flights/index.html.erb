@@ -31,6 +31,8 @@
         <%= flight.formatted_departure_time %> 
         <br><br>
     <% end %>
+    <% if @flights.count == 0 %> No Flights match your search criteria. Try a broader search.
+    <% end %>
     <%= hidden_field_tag(:number_of_passengers, @number_of_passengers) %>
     <%= submit_tag "Select Flight" if @flights.count != 0 %>
 <% end %>
